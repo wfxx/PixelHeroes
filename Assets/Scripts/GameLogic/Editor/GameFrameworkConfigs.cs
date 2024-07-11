@@ -16,15 +16,15 @@ namespace StarForce.Editor
     public static class GameFrameworkConfigs
     {
         [BuildSettingsConfigPath]
-        public static string BuildSettingsConfig = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "GameMain/Configs/BuildSettings.xml"));
+        public static string BuildSettingsConfig = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "Sources/Configs/Common/BuildSettings.xml"));
 
         [ResourceCollectionConfigPath]
-        public static string ResourceCollectionConfig = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "GameMain/Configs/ResourceCollection.xml"));
+        public static string ResourceCollectionConfig = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "Sources/Configs/Common/ResourceCollection.xml"));
 
         [ResourceEditorConfigPath]
-        public static string ResourceEditorConfig = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "GameMain/Configs/ResourceEditor.xml"));
+        public static string ResourceEditorConfig = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "Sources/Configs/Common/ResourceEditor.xml"));
 
         [ResourceBuilderConfigPath]
-        public static string ResourceBuilderConfig = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "GameMain/Configs/ResourceBuilder.xml"));
+        public static string ResourceBuilderConfig = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "Sources/Configs/Common/ResourceBuilder.xml"));
     }
 }

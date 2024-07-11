@@ -83,7 +83,7 @@ namespace StarForce
             playSoundParams.Loop = false;
             playSoundParams.VolumeInSoundGroup = drUISound.Volume;
             playSoundParams.SpatialBlend = 0f;
-            return soundComponent.PlaySound(AssetUtility.GetUISoundAsset(drUISound.AssetName), "UISound", Constant.AssetPriority.UISoundAsset, playSoundParams, userData);
+            return soundComponent.PlaySound(AssetUtility.GetSoundAsset(drUISound.AssetName), "UISound", Constant.AssetPriority.UISoundAsset, playSoundParams, userData);
         }
 
         public static bool IsMuted(this SoundComponent soundComponent, string soundGroupName)

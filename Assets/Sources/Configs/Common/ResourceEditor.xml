@@ -2,7 +2,7 @@
 <UnityGameFramework>
   <ResourceEditor>
     <Settings>
-      <SourceAssetRootPath>Assets/GameMain</SourceAssetRootPath>
+      <SourceAssetRootPath>Assets/Sources</SourceAssetRootPath>
       <SourceAssetSearchPaths>
         <SourceAssetSearchPath RelativePath="" />
       </SourceAssetSearchPaths>
