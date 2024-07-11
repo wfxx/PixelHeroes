@@ -98,7 +98,7 @@ namespace GameLogic
             }
 
             // Preload dictionaries
-            LoadDictionary("Default");
+            LoadDictionary(GameEntry.Localization.Language.ToString());
 
             // Preload fonts
             LoadFont("MainFont");

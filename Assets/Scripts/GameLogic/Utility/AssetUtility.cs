@@ -23,7 +23,7 @@ namespace GameLogic
 
         public static string GetDictionaryAsset(string assetName, bool fromBytes)
         {
-            return Utility.Text.Format("Assets/Sources/Configs/Localization/{0}/Dictionaries/{1}.{2}", GameEntry.Localization.Language, assetName, fromBytes ? "bytes" : "xml");
+            return Utility.Text.Format("Assets/Sources/Configs/Localization/{0}.{1}", assetName, fromBytes ? "bytes" : "json.txt");
         }
 
         public static string GetFontAsset(string assetName)
