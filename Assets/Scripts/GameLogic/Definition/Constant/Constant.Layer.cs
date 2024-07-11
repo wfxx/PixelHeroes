@@ -7,7 +7,7 @@
 
 using UnityEngine;
 
-namespace StarForce
+namespace GameLogic
 {
     public static partial class Constant
     {

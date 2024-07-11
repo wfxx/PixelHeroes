@@ -9,7 +9,7 @@ using GameFramework;
 using GameFramework.ObjectPool;
 using UnityEngine;
 
-namespace StarForce
+namespace GameLogic
 {
     public class HPBarItemObject : ObjectBase
     {

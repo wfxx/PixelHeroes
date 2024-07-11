@@ -16,7 +16,7 @@ using System.IO;
 using System.Reflection;
 using UnityGameFramework.Runtime;
 
-namespace StarForce
+namespace GameLogic
 {
     public class NetworkChannelHelper : INetworkChannelHelper
     {

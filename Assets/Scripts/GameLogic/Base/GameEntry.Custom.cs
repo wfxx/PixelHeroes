@@ -7,7 +7,7 @@
 
 using UnityEngine;
 
-namespace StarForce
+namespace GameLogic
 {
     /// <summary>
     /// 游戏入口。

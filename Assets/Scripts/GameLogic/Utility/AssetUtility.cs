@@ -7,7 +7,7 @@
 
 using GameFramework;
 
-namespace StarForce
+namespace GameLogic
 {
     public static class AssetUtility
     {

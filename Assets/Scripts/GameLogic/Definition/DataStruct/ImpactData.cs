@@ -7,7 +7,7 @@
 
 using System.Runtime.InteropServices;
 
-namespace StarForce
+namespace GameLogic
 {
     [StructLayout(LayoutKind.Auto)]
     public struct ImpactData

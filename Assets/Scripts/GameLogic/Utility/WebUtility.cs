@@ -7,7 +7,7 @@
 
 using System;
 
-namespace StarForce
+namespace GameLogic
 {
     public static class WebUtility
     {

@@ -10,7 +10,7 @@ using GameFramework.Localization;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
-namespace StarForce
+namespace GameLogic
 {
     public class ChangeLanguageDebuggerWindow : IDebuggerWindow
     {
