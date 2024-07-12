@@ -6,6 +6,7 @@
 //------------------------------------------------------------
 
 using GameFramework.Event;
+using GameFramework.Procedure;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -15,15 +16,6 @@ namespace GameLogic
     {
         private bool m_StartGame = false;
         private MenuForm m_MenuForm = null;
-
-        public override bool UseNativeDialog
-        {
-            get
-            {
-                return false;
-            }
-        }
-
         public void StartGame()
         {
             m_StartGame = true;

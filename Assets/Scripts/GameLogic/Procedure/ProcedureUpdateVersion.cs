@@ -6,6 +6,7 @@
 //------------------------------------------------------------
 
 using GameFramework.Resource;
+using GameFramework.Procedure;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -15,14 +16,6 @@ namespace GameLogic
     {
         private bool m_UpdateVersionComplete = false;
         private UpdateVersionListCallbacks m_UpdateVersionListCallbacks = null;
-
-        public override bool UseNativeDialog
-        {
-            get
-            {
-                return true;
-            }
-        }
 
         protected override void OnInit(ProcedureOwner procedureOwner)
         {

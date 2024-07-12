@@ -6,6 +6,8 @@
 //------------------------------------------------------------
 
 using GameFramework.Localization;
+using GameFramework.Procedure;
+using GameFramework.Resource;
 using System;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
@@ -14,14 +16,6 @@ namespace GameLogic
 {
     public class ProcedureLaunch : ProcedureBase
     {
-        public override bool UseNativeDialog
-        {
-            get
-            {
-                return true;
-            }
-        }
-
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);
@@ -47,8 +41,24 @@ namespace GameLogic
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
 
-            // 运行一帧即切换到 Splash 展示流程
-            ChangeState<ProcedureSplash>(procedureOwner);
+            if (GameEntry.Base.EditorResourceMode)
+            {
+                // 编辑器模式
+                Log.Info("Editor resource mode detected.");
+                ChangeState<ProcedurePreload>(procedureOwner);
+            }
+            else if (GameEntry.Resource.ResourceMode == ResourceMode.Package)
+            {
+                // 单机模式
+                Log.Info("Package resource mode detected.");
+                ChangeState<ProcedureInitResources>(procedureOwner);
+            }
+            else
+            {
+                // 可更新模式
+                Log.Info("Updatable resource mode detected.");
+                ChangeState<ProcedureCheckVersion>(procedureOwner);
+            }
         }
 
         private void InitLanguageSettings()

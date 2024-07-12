@@ -152,9 +152,9 @@ namespace GameLogic
             return uiComponent.OpenUIForm(assetName, drUIForm.UIGroupName, Constant.AssetPriority.UIFormAsset, drUIForm.PauseCoveredUIForm, userData);
         }
 
-        public static void OpenDialog(this UIComponent uiComponent, DialogParams dialogParams)
+        public static void OpenDialog(this UIComponent uiComponent, DialogParams dialogParams, bool useNativeDialog)
         {
-            if (((ProcedureBase)GameEntry.Procedure.CurrentProcedure).UseNativeDialog)
+            if (useNativeDialog)
             {
                 OpenNativeDialog(dialogParams);
             }

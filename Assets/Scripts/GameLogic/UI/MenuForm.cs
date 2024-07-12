@@ -40,7 +40,7 @@ namespace GameLogic
                 Title = GameEntry.Localization.GetString("AskQuitGame.Title"),
                 Message = GameEntry.Localization.GetString("AskQuitGame.Message"),
                 OnClickConfirm = delegate (object userData) { UnityGameFramework.Runtime.GameEntry.Shutdown(ShutdownType.Quit); },
-            });
+            }, false);
         }
 
 #if UNITY_2017_3_OR_NEWER

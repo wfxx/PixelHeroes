@@ -8,6 +8,7 @@
 using GameFramework;
 using GameFramework.Event;
 using GameFramework.Resource;
+using GameFramework.Procedure;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
@@ -33,15 +34,6 @@ namespace GameLogic
         };
 
         private Dictionary<string, bool> m_LoadedFlag = new Dictionary<string, bool>();
-
-        public override bool UseNativeDialog
-        {
-            get
-            {
-                return true;
-            }
-        }
-
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);

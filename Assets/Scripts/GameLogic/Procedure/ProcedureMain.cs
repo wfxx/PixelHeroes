@@ -6,6 +6,7 @@
 //------------------------------------------------------------
 
 using System.Collections.Generic;
+using GameFramework.Procedure;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -14,20 +15,10 @@ namespace GameLogic
     public class ProcedureMain : ProcedureBase
     {
         private const float GameOverDelayedSeconds = 2f;
-
         private readonly Dictionary<GameMode, GameBase> m_Games = new Dictionary<GameMode, GameBase>();
         private GameBase m_CurrentGame = null;
         private bool m_GotoMenu = false;
         private float m_GotoMenuDelaySeconds = 0f;
-
-        public override bool UseNativeDialog
-        {
-            get
-            {
-                return false;
-            }
-        }
-
         public void GotoMenu()
         {
             m_GotoMenu = true;

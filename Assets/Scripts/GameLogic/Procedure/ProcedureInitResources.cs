@@ -6,6 +6,7 @@
 //------------------------------------------------------------
 
 using UnityGameFramework.Runtime;
+using GameFramework.Procedure;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
 namespace GameLogic
@@ -13,15 +14,6 @@ namespace GameLogic
     public class ProcedureInitResources : ProcedureBase
     {
         private bool m_InitResourcesComplete = false;
-
-        public override bool UseNativeDialog
-        {
-            get
-            {
-                return true;
-            }
-        }
-
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);

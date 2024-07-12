@@ -8,6 +8,7 @@
 using GameFramework;
 using GameFramework.Event;
 using GameFramework.Resource;
+using GameFramework.Procedure;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
@@ -19,15 +20,6 @@ namespace GameLogic
         private bool m_CheckVersionComplete = false;
         private bool m_NeedUpdateVersion = false;
         private VersionInfo m_VersionInfo = null;
-
-        public override bool UseNativeDialog
-        {
-            get
-            {
-                return true;
-            }
-        }
-
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);
@@ -124,7 +116,7 @@ namespace GameLogic
                     OnClickConfirm = GotoUpdateApp,
                     CancelText = GameEntry.Localization.GetString("ForceUpdate.QuitButton"),
                     OnClickCancel = delegate (object userData) { UnityGameFramework.Runtime.GameEntry.Shutdown(ShutdownType.Quit); },
-                });
+                }, true);
 
                 return;
             }

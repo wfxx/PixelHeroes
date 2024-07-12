@@ -1,5 +1,6 @@
 ﻿using GameFramework;
 using GameFramework.Event;
+using GameFramework.Procedure;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
@@ -15,15 +16,6 @@ namespace GameLogic
         private int m_UpdateSuccessCount = 0;
         private List<UpdateLengthData> m_UpdateLengthData = new List<UpdateLengthData>();
         private UpdateResourceForm m_UpdateResourceForm = null;
-
-        public override bool UseNativeDialog
-        {
-            get
-            {
-                return true;
-            }
-        }
-
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);
@@ -53,7 +45,7 @@ namespace GameLogic
                     OnClickConfirm = StartUpdateResources,
                     CancelText = GameEntry.Localization.GetString("UpdateResourceViaCarrierDataNetwork.QuitButton"),
                     OnClickCancel = delegate (object userData) { UnityGameFramework.Runtime.GameEntry.Shutdown(ShutdownType.Quit); },
-                });
+                }, true);
 
                 return;
             }
