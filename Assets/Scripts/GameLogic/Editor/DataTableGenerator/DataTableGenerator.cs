@@ -17,15 +17,16 @@ namespace GameLogic.Editor.DataTableTools
 {
     public sealed class DataTableGenerator
     {
-        private const string DataTablePath = "Assets/Sources/Configs/DataTables";
+        private const string DataTableTsvPath = "Assets/Sources/Configs/DataTables/Tsv";
+        private const string DataTableBytesPath = "Assets/Sources/Configs/DataTables/Bytes";
         private const string CSharpCodePath = "Assets/Scripts/GameLogic/DataTable";
-        private const string CSharpCodeTemplateFileName = "Assets/Sources/Configs/DataTables/_Template.txt";
+        private const string CSharpCodeTemplateFileName = "Assets/Sources/Configs/DataTables/CodeTemplate.txt";
         private static readonly Regex EndWithNumberRegex = new Regex(@"\d+$");
         private static readonly Regex NameRegex = new Regex(@"^[A-Z][A-Za-z0-9_]*$");
 
         public static DataTableProcessor CreateDataTableProcessor(string dataTableName)
         {
-            return new DataTableProcessor(Utility.Path.GetRegularPath(Path.Combine(DataTablePath, dataTableName + ".txt")), Encoding.GetEncoding("GB2312"), 1, 2, null, 3, 4, 1);
+            return new DataTableProcessor(Utility.Path.GetRegularPath(Path.Combine(DataTableTsvPath, dataTableName + ".tsv.txt")), Encoding.GetEncoding("GB2312"), 1, 2, null, 3, 4, 1);
         }
 
         public static bool CheckRawData(DataTableProcessor dataTableProcessor, string dataTableName)
@@ -50,7 +51,7 @@ namespace GameLogic.Editor.DataTableTools
 
         public static void GenerateDataFile(DataTableProcessor dataTableProcessor, string dataTableName)
         {
-            string binaryDataFileName = Utility.Path.GetRegularPath(Path.Combine(DataTablePath, dataTableName + ".bytes"));
+            string binaryDataFileName = Utility.Path.GetRegularPath(Path.Combine(DataTableBytesPath, dataTableName + ".bytes"));
             if (!dataTableProcessor.GenerateDataFile(binaryDataFileName) && File.Exists(binaryDataFileName))
             {
                 File.Delete(binaryDataFileName);
@@ -73,7 +74,6 @@ namespace GameLogic.Editor.DataTableTools
         {
             string dataTableName = (string)userData;
 
-            codeContent.Replace("__DATA_TABLE_CREATE_TIME__", DateTime.UtcNow.ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss.fff"));
             codeContent.Replace("__DATA_TABLE_NAME_SPACE__", "GameLogic");
             codeContent.Replace("__DATA_TABLE_CLASS_NAME__", "DR" + dataTableName);
             codeContent.Replace("__DATA_TABLE_COMMENT__", dataTableProcessor.GetValue(0, 1) + "。");

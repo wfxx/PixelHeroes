@@ -18,7 +18,7 @@ namespace GameLogic
 
         public static string GetDataTableAsset(string assetName, bool fromBytes)
         {
-            return Utility.Text.Format("Assets/Sources/Configs/DataTables/{0}.{1}", assetName, fromBytes ? "bytes" : "txt");
+            return Utility.Text.Format("Assets/Sources/Configs/DataTables/{0}/{1}.{2}", fromBytes ? "Bytes" : "Tsv", assetName, fromBytes ? "bytes" : "tsv.txt");
         }
 
         public static string GetDictionaryAsset(string assetName, bool fromBytes)
