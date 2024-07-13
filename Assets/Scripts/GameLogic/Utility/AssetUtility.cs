@@ -11,11 +11,6 @@ namespace GameLogic
 {
     public static class AssetUtility
     {
-        public static string GetConfigAsset(string assetName, bool fromBytes)
-        {
-            return Utility.Text.Format("Assets/Sources/Configs/Default/{0}.{1}", assetName, fromBytes ? "bytes" : "txt");
-        }
-
         public static string GetDataTableAsset(string assetName, bool fromBytes)
         {
             return Utility.Text.Format("Assets/Sources/Configs/DataTables/{0}/{1}.{2}", fromBytes ? "Bytes" : "Tsv", assetName, fromBytes ? "bytes" : "tsv.txt");
